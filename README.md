@@ -9,7 +9,7 @@ A collection of skills, agents, plugins, and tools that augment the student jour
 | Skill | Description |
 |---|---|
 | [create-project-documentation](collection/skills/create-project-documentation/SKILL.md) | Builds or refreshes a complete project documentation set — README, ADRs, user and admin guides, changelog, release notes — and records upkeep rules in `AGENTS.md`. |
-| [design-thinking-coach](collection/skills/design-thinking-coach/SKILL.md) | Coaches grades 5–12 through a design-thinking ideation session with age-banded questions, research verification, and a final proposal, research log, and decision record. |
+| [design-thinking-coach](collection/skills/design-thinking-coach/README.md) | Coaches grades 5–12 through a design-thinking ideation session with age-banded questions, research verification, and a final proposal, research log, and decision record. |
 | [showcase-capture](collection/skills/showcase-capture/SKILL.md) | Captures screenshots, a captioned GIF, and a WebM tour of a web project from a YAML or TypeScript scenario. |
 | [skill-creator](collection/skills/skill-creator/SKILL.md) | Interviews you about a skill idea, scaffolds it from a template, and validates it with `skill-review`. |
 | [skill-review](collection/skills/skill-review/SKILL.md) | Audits skills against agentskills.io best practices on six quality axes and can apply approved improvements. |
