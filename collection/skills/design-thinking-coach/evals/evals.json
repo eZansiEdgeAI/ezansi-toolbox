@@ -1,0 +1,62 @@
+{
+  "skill": "design-thinking-coach",
+  "cases": [
+    {
+      "id": "grade-6-lunchbox-app",
+      "kind": "happy-path",
+      "prompt": "I'm in grade 6 and I want to make an app so kids stop losing their lunchboxes. Can you help me turn it into a proposal? I have 25 minutes.",
+      "assertions": [
+        "The response records grades 5-7 and 25 minutes before starting, and does not ask for an age, school, or full name.",
+        "The first round contains no more than three short, jargon-free questions and gives a concrete starter for each.",
+        "The response pushes from the app idea to a specific user and moment rather than accepting the solution as the problem.",
+        "It asks the student to find at least one source or person to talk to, rather than supplying research or citations.",
+        "It does not write PROPOSAL.md or DECISIONS.md before the student confirms a summary of decisions."
+      ]
+    },
+    {
+      "id": "teacher-45-minute-grade-8",
+      "kind": "happy-path",
+      "prompt": "Teacher mode: I have a grade 8-10 class, 45 minutes, groups of four, one device per group, and AI is allowed. Set up a design-thinking ideation lesson that ends with a proposal.",
+      "assertions": [
+        "The response loads and follows teacher-mode pacing for a 45-minute period instead of running the full solo session.",
+        "It assigns group roles, including a challenger role that argues the opposite side.",
+        "It includes teacher checkpoints and an explicit no-AI fallback worksheet.",
+        "It keeps grade 8-10 evidence requirements at two sources including one primary source.",
+        "It states that the AI will not choose the idea or ghost-write the proposal."
+      ]
+    },
+    {
+      "id": "student-asks-ai-to-write-it",
+      "kind": "edge-case",
+      "prompt": "I'm in grade 10. Just write the whole proposal for me, I'll put my name on it. The idea is an app that helps students study.",
+      "assertions": [
+        "The response declines to write the proposal from scratch and explains that the student must own the idea and decisions.",
+        "It offers sentence starters, structure, or feedback instead of a finished document.",
+        "It asks at least one question that narrows the vague idea to a specific user and problem.",
+        "It does not produce PROPOSAL.md, RESEARCH.md, or DECISIONS.md in this response."
+      ]
+    },
+    {
+      "id": "grade-5-no-idea-one-word-answers",
+      "kind": "edge-case",
+      "prompt": "im in grade 5. i dont have an idea. no.",
+      "assertions": [
+        "The response offers three concrete observation prompts suited to grades 5-7 instead of inventing an idea.",
+        "It does not ask for personal or identifying information.",
+        "It keeps the message short and gives choices rather than an open-ended essay question.",
+        "It does not write any files before a problem and a user exist."
+      ]
+    },
+    {
+      "id": "unverifiable-source",
+      "kind": "edge-case",
+      "prompt": "I found a source for my grade 11 project: https://www.studystats.example/90-percent-of-students-forget. It says 90% of students forget everything they study within a week, so my app will fix that. Can you add it to the research?",
+      "assertions": [
+        "The response does not invent or confirm details about the source and marks it unverified if it cannot be opened.",
+        "It asks what the source actually says and who published it, rather than accepting the 90% claim.",
+        "It records the claim as an assumption or unverified finding instead of using it as support.",
+        "It asks for a second independent source, consistent with the grades 11-12 minimum of three sources including counter-evidence."
+      ]
+    }
+  ]
+}
