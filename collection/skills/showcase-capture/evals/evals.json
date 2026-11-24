@@ -1,0 +1,25 @@
+{
+  "skill": "showcase-capture",
+  "cases": [
+    {
+      "id": "capture-static-site",
+      "kind": "happy-path",
+      "prompt": "Create a visual tour for a small static site with desktop and mobile layouts. Capture a few named screenshots and a short GIF/WebM. Do not commit the generated files.",
+      "assertions": [
+        "The workflow inspects the site and creates a config that points its static server at the correct build/output directory.",
+        "The workflow runs the config check before capture and reviews the generated README, gallery, manifest, and media.",
+        "The output includes the configured screenshots and motion files, and no commit is made."
+      ]
+    },
+    {
+      "id": "partial-capture-and-browser-missing",
+      "kind": "edge-case",
+      "prompt": "Iterate on one scene using --only while Chromium is unavailable.",
+      "assertions": [
+        "The user is told that --only captures just that scene and skips GIF/WebM, so a full capture is needed to refresh motion files.",
+        "The workflow identifies missing Chromium and gives the documented install command before retrying check or capture.",
+        "A failed browser launch exits without leaving the local static server running and is not reported as a successful capture."
+      ]
+    }
+  ]
+}

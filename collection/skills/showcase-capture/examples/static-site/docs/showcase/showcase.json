@@ -1,0 +1,30 @@
+{
+  "name": "Fieldnote Studio",
+  "generatedAt": "2026-11-12T20:44:30.075Z",
+  "scenes": [
+    {
+      "name": "desktop",
+      "screenshots": [
+        {
+          "name": "01-home",
+          "path": "screens/01-home.png"
+        },
+        {
+          "name": "02-work",
+          "path": "screens/02-work.png"
+        }
+      ]
+    },
+    {
+      "name": "mobile",
+      "screenshots": [
+        {
+          "name": "03-mobile-home",
+          "path": "screens/03-mobile-home.png"
+        }
+      ]
+    }
+  ],
+  "gif": "fieldnote-studio.gif",
+  "video": "fieldnote-studio.webm"
+}

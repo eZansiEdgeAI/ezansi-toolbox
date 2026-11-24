@@ -1,0 +1,59 @@
+name: Fieldnote Studio
+outDir: docs/showcase
+
+server:
+  mode: static
+  dir: .
+  spa: true
+
+viewports:
+  desktop: { width: 1440, height: 900 }
+  mobile: { width: 390, height: 844 }
+
+scenes:
+  - name: desktop
+    viewport: desktop
+    steps:
+      - goto: /
+      - waitFor: h1
+      - screenshot: 01-home
+      - click:
+          role: button
+          name: View our work
+      - wait: 700
+      - screenshot: 02-work
+
+  - name: mobile
+    viewport: mobile
+    steps:
+      - goto: /
+      - waitFor: h1
+      - screenshot: 03-mobile-home
+
+gif:
+  viewport: { width: 1024, height: 640 }
+  size: { width: 960, height: 600 }
+  fps: 8
+  steps:
+    - goto: /
+    - caption: [1, "Fieldnote Studio", "A small studio with a clear point of view"]
+    - wait: 600
+    - click:
+        role: button
+        name: View our work
+    - wait: 900
+    - caption: [2, "The work", "Three ways we help small teams"]
+    - scroll: 720
+    - wait: 600
+    - caption: [3, "Start a conversation", "A simple contact route"]
+
+video:
+  enabled: true
+  size: { width: 1280, height: 720 }
+
+readme:
+  title: Fieldnote Studio visual tour
+  intro: A short screenshot and motion tour of the example static site.
+
+gallery:
+  title: Fieldnote Studio screenshots

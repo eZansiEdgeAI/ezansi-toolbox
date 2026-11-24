@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fieldnote Studio screenshots</title>
+  <style>
+    :root { color-scheme: light; --ink: #1b163b; --muted: #6b6685; --line: #e7e3f2; --surface: #fff; --canvas: #f7f5fb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--canvas); color: var(--ink); font-family: Inter, system-ui, sans-serif; }
+    main { max-width: 1200px; margin: 0 auto; padding: 48px 20px 80px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.04em; margin: 0 0 8px; }
+    p.lede { color: var(--muted); max-width: 60ch; margin: 0 0 32px; }
+    .motion { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .motion img, .motion video { width: 100%; border-radius: 16px; border: 1px solid var(--line); background: var(--surface); }
+    figure { margin: 0; }
+    figcaption { margin-top: 6px; font-size: 12px; color: var(--muted); }
+    .scene { margin-top: 40px; }
+    .scene h2 { font-size: 1.2rem; margin: 0 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .shot button { padding: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--surface); cursor: zoom-in; display: block; width: 100%; }
+    .shot img { width: 100%; display: block; }
+    dialog { max-width: min(96vw, 1400px); max-height: 92vh; padding: 0; border: 0; background: transparent; }
+    dialog::backdrop { background: rgba(27, 22, 59, 0.75); }
+    dialog img { max-width: 100%; max-height: 88vh; display: block; border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Fieldnote Studio screenshots</h1>
+    <p class="lede">A short screenshot and motion tour of the example static site.</p>
+    <figure class="motion"><img src="fieldnote-studio.gif" alt="Fieldnote Studio showcase GIF" /><figcaption>GIF tour</figcaption></figure>
+<figure class="motion"><video src="fieldnote-studio.webm" controls autoplay loop muted playsinline></video><figcaption>WebM tour</figcaption></figure>
+    <section class="scene"><h2>desktop</h2><div class="grid"><figure class="shot"><button type="button" data-src="screens/01-home.png"><img src="screens/01-home.png" alt="desktop 01-home" loading="lazy" /></button><figcaption>01-home</figcaption></figure>
+<figure class="shot"><button type="button" data-src="screens/02-work.png"><img src="screens/02-work.png" alt="desktop 02-work" loading="lazy" /></button><figcaption>02-work</figcaption></figure></div></section>
+<section class="scene"><h2>mobile</h2><div class="grid"><figure class="shot"><button type="button" data-src="screens/03-mobile-home.png"><img src="screens/03-mobile-home.png" alt="mobile 03-mobile-home" loading="lazy" /></button><figcaption>03-mobile-home</figcaption></figure></div></section>
+  </main>
+  <dialog id="lightbox"><img alt="" /></dialog>
+  <script>
+    const dialog = document.getElementById('lightbox');
+    const image = dialog.querySelector('img');
+    document.querySelectorAll('.shot button').forEach((button) => {
+      button.addEventListener('click', () => {
+        image.src = button.dataset.src;
+        image.alt = button.querySelector('img').alt;
+        dialog.showModal();
+      });
+    });
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  </script>
+</body>
+</html>
